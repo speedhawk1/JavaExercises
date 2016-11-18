@@ -1,0 +1,2560 @@
+1.test10001显示短句
+
+//程序填空.
+//在屏幕上显示一个短句“Programming in Java is fun!”
+
+
+import java.io.*;
+public class Test10001{
+     public static void main(String args[]){
+     /*------------------------*/	
+    	 System.out.println("Programming in Java is fun!");
+   }
+}
+
+
+2.test10002显示网格
+
+/*程序填空。
+在屏幕上显示如下网格。
++---+---+
+|   |   |
+|   |   |
++---+---+
+*/
+
+import java.io.*;
+public class Test10002{
+     public static void main(String args[]){
+     /*------------------------*/		
+    	 System.out.println("+---+---+");
+    	 System.out.println("|   |   |");
+    	 System.out.println("|   |   |");
+    	 System.out.println("+---+---+");
+    	 
+   }
+}
+
+
+3.test10095显示hello world！
+
+import java.io.*;
+public class Test10095{
+     public static void main(String args[]){
+     /*---------------------------*/
+    	 System.out.println("Hello world!");
+   }
+}
+
+
+4.test10097求两个数的和
+
+/*输入n表示做n次下面的操作：
+输入两个正整数,输出它们的和.
+
+例：
+输入：
+2    //表示n=2,做两次操作
+10 11
+20 30
+
+输出：
+sum=21
+sum=50
+*/
+
+import java.util.Scanner;
+public class Test10097{
+  public static void main(String args[]){
+	  int n,a,b,i,sum;
+	  Scanner in=new Scanner(System.in);
+	  n=in.nextInt();   //输入n
+	  for(i=1; i<=n; i++){
+		  /*------------*/
+		  a=in.nextInt();
+		  b=in.nextInt();
+		  sum=a+b;
+		  System.out.println("sum="+sum);
+	}
+  }
+}
+
+
+5.test20001求两个数的和与差
+
+/*程序填空，不要改变与输入输出有关的语句。
+输入整数a和b，计算并输出a、b的和与差。
+例：
+输入
+2  -8
+输出
+The sum is -6
+The difference is 10*/
+
+
+import java.io.*;
+import java.util.Scanner;
+public class Test20001{
+     public static void main(String args[]){
+        int a, b, sum, diff;
+        Scanner in=new Scanner(System.in);
+        a=in.nextInt();
+        b=in.nextInt();
+        /*------------------*/ 
+        sum=a+b;
+        diff=a-b;
+        System.out.println("The sum is "+sum);
+        System.out.println("The difference is "+diff);
+   }
+}
+
+
+6.test20002求平方根
+
+//程序填空，不要改变与输入输出有关的语句。
+输入1个实数x，计算并输出其平方根。
+例：
+输入
+1.21
+输出
+The square root of 1.21 is 1.1
+
+
+
+import java.io.*;
+import java.util.Scanner;
+public class Test20002{
+     public static void main(String args[]){
+        double x, root;
+        Scanner in=new Scanner(System.in);
+        x=in.nextDouble();
+        /*------------------*/ 
+        root=Math.sqrt(x);
+        System.out.println("The square root of "+x+" is "+root);
+   }
+}
+
+
+7.test20003华氏温度转换成摄氏温度
+
+/*程序填空，不要改变与输入输出有关的语句。
+输入华氏温度f，计算并输出相应的摄氏温度c。c = 5/9(f-32).
+例：括号内是说明
+输入
+17.2 (华氏温度)
+输出
+The temprature is -8.222222222222223*/
+
+
+import java.util.Scanner;
+public class Test20003 {
+   public static void main(String[] args) {
+      Scanner in=new Scanner(System.in);
+      double f, c;
+      f=in.nextDouble();
+      /*------------------*/ 
+      c=5*(f-50)/9+10;
+      System.out.println("The temprature is "+c);    
+   }
+}
+
+
+8.test20004计算旅途时间
+
+程序填空，不要改变与输入输出有关的语句。
+输入2个整数time1和time2，表示火车的出发时间和到达时间，计算并输出旅途时间。
+有效的时间范围是0000到2359，不需要考虑出发时间晚于到达时间的情况。
+例：括号内是说明
+输入
+712 1411（出发时间是7：10，到达时间是14：11）
+输出
+The train journey time is 6 hrs 59 mins.
+
+
+
+import java.util.Scanner;
+public class Test20004 {
+       public static void main(String[] args) {
+       Scanner in=new Scanner(System.in);
+       int time1, time2, hours, mins;
+       time1=in.nextInt();
+       time2=in.nextInt();
+       /*------------------*/ 
+       time1=(time1/100)*60+time1%100;
+       time2=(time2/100)*60+time2%100;
+       hours=(time2-time1)/60;
+       mins=(time2-time1)-hours*60;
+       System.out.println("The train journey time is "+hours+" hrs "+ mins+" mins.");    
+   }
+}
+
+
+9.test20005数字加密
+
+程序填空，不要改变与输入输出有关的语句。
+输入1个四位数，将其加密后输出。
+方法是将该数每一位上的数字加9，
+然后除以10取余，做为该位上的新数字，
+最后将第1位和第3位上的数字互换，第2位和第4位上的数字互换，组成加密后的新数。
+例：括号内是说明
+输入
+1257
+输出
+The encrypted number is 4601(每一位上的数字加9除以10取余后，得0146，交换后得到4601)
+
+
+
+
+import java.util.Scanner;
+public class Test20005 {
+   public static void main(String[] args) {
+      Scanner in=new Scanner(System.in);
+      int number, digit1, digit2, digit3, digit4, newnum;
+      int temp;   //我自己定义了一个变量
+      number=in.nextInt();
+      /*------------------*/ 
+      digit1=number/1000;
+      digit2=(number%1000)/100;
+      digit3=((number%1000)%100)/10;
+      digit4=number%10;
+      //以下是测试语句,看看我们的想法是不是正确.但是作业在提交时一定要把它注释掉
+      //System.out.print(" "+digit1+" "+digit2+" "+digit3+" "+digit4);    
+      //-----------------------------------
+      digit1=(digit1+9)%10;
+      digit2=(digit2+9)%10;
+      digit3=(digit3+9)%10;
+      digit4=(digit4+9)%10;
+      //---------------------------
+      temp=digit1;
+      digit1=digit3;
+      digit3=temp;
+      //----------------------------
+      temp=digit2;
+      digit2=digit4;
+      digit4=temp;
+      //----------------------------------
+      newnum=digit1*1000+digit2*100+digit3*10+digit4;
+      System.out.println("The encrypted number is "+newnum);    
+   }
+}
+
+
+
+10.test20006大小写字母转换
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个大写英文字母，输出相应的小写字母。
+例：
+输入
+G
+输出
+g
+
+import java.io.*;
+public class T20006 {
+	  public static void main(String[] args) throws IOException
+          {
+	     char ch;
+	     ch=(char)System.in.read();   
+	      /*------------------*/ 
+	      ch=(char)(ch+32);       // 以ASCII码计算
+	      System.out.println(ch);    
+	  }
+
+}
+
+
+11.Test20007计算三门课程的平均成绩
+
+程序填空，不要改变与输入输出有关的语句。
+已知某位学生的数学、英语和计算机课程的成绩分别是87分、72分和93分，求该生3门课程的平均分。
+本题无输入。
+输出示例：
+math = 87, eng = 72, comp = 93
+average = 84
+
+
+
+public class test20007 {
+   public static void main(String[] args)  {
+      int math, eng, comp, average;
+      /**********/
+      math=87;
+      eng=72;
+      comp=93;
+      average=(math+eng+comp)/3;
+      System.out.println("math = "+math+", eng = "+eng+", comp = "+comp);
+      System.out.println("average = "+ average);
+   }
+}
+
+
+12.test20008计算存款利息
+
+程序填空，不要改变与输入输出有关的语句。
+输入存款金额 money、存期 year 和年利率 rate，
+根据下列公式计算存款到期时的利息 interest(税前)，输出时保留2位小数。
+interest = money(1+rate)^year - money
+输入输出示例：括号内为说明
+输入
+1000 3 0.025	(money = 1000, year = 3, rate = 0.025)
+输出
+interest = 76.89
+
+import java.util.Scanner;
+public class test20008 {
+   public static void main(String[] args)  {
+      int money, year;
+      double interest, rate;
+      Scanner in=new Scanner(System.in);  
+      /*使用in.nextDouble()和in.nextInt()输入double和int型数据*/
+      /**********/
+      money=in.nextInt();
+      year=in.nextInt();
+      rate=in.nextDouble();
+      interest=money*Math.pow((1+rate),year)-money;
+      System.out.println("interest = "+ (int)(interest*100+0.5)/100.0);
+   }
+}
+
+
+13.test30001显示两级成绩
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个学生的数学成绩，如果它低于60，输出“Fail”，否则，输出“Pass”。
+输出使用System.out.println("Pass");及System.out.println("Fail");
+例：括号内是说明
+输入
+2  (repeat=2) 
+60  59
+输出
+Pass
+Fail
+
+import java.util.Scanner;
+public class Test30001{
+   public static void main(String[] args){
+	  int ri, repeat;
+	  int mark;
+	  Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          mark=in.nextInt();
+          if (mark>=60)
+        	  System.out.println("Pass");
+          else
+        	  System.out.println("Fail");
+        	  
+      /*------------------*/ 
+     }
+   }
+}
+
+
+
+14.test30002找最小值
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入四个整数，输出其中的最小值。
+例：括号内是说明
+输入
+3  (repeat=3) 
+12 6 1 90
+10 40 30 20
+-1 -3 -4 -5
+输出
+min is 1 (12 6 1 90 中的最小值是1)
+min is 10 (10 40 30 20 中的最小值是10)
+min is -5 (-1 -3 -4 -5中的最小值是-5)
+
+import java.util.Scanner;
+public class Test30002 {
+   public static void main(String[] args){
+      int ri, repeat;
+      int a, b, c, d, min;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          a=in.nextInt();
+          b=in.nextInt();
+          c=in.nextInt();
+          d=in.nextInt();
+           /*------------------*/
+          min=a;
+          if(min>b)min=b;
+          if(min>c)min=c;
+          if(min>d)min=d;
+          System.out.println("min is "+min);
+      }
+   }
+}
+
+
+15.test30003求三角形的面积和周长
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入三角形的三条边a, b, c，如果能构成一个三角形，输出面积area和周长perimeter；
+否则，输出“These sides do not correspond to a valid triangle”。
+在一个三角形中，任意两边之和大于第三边。
+三角形的面积计算公式：
+aere*area = s(s-a)(s-b)(s-c)
+其中:s = (a+b+c)/2
+输出代码:
+System.out.println("area="+area+";perimeter="+perimeter);
+System.out.println("These sides do not correspond to a valid triangle"); 
+
+例：括号内是说明
+输入
+2  (repeat=2) 
+5 5 3
+1 1 4
+输出
+area=7.154544;perimeter=13.0
+These sides do not correspond to a valid triangle
+
+import java.util.Scanner;
+public class Test30003 {
+   public static void main(String[] args){
+      int ri, repeat;
+      float a, b, c, area, perimeter, s;
+	  Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          a=in.nextFloat();
+          b=in.nextFloat();
+          c=in.nextFloat();
+           /*------------------*/
+          if (a+b>c&&a+c>b&&b+c>a)
+          {
+        	  perimeter=a+b+c;
+        	  s = (a+b+c)/2.0f;
+        	  area =(float)Math.sqrt(s*(s-a)*(s-b)*(s-c)) ;
+        	  System.out.println("area="+area+";perimeter="+perimeter);
+          }
+          else
+        	  System.out.println("These sides do not correspond to a valid triangle");  
+      }
+   }
+}
+
+
+16.test30004判断数的符号
+
+/*输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入整数x，若x大于0，y=1；若x等于0，y=0；否则，y=-1，最后输出y。
+例：括号内是说明
+输入
+3  (repeat=3) 
+2  -8  0
+输出
+1     (x=2时y=1)
+-1    (x=-8时y=-1)
+0     (x=0时y=0)
+*/
+
+import java.util.Scanner;
+public class Test30004{
+   public static void main(String[] args){
+      int ri, repeat;
+      int x, y=0;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          x=in.nextInt();
+           /*------------------*/
+          if (x>0)
+        	  y=1;
+          else if (x==0)
+        	  y=0;
+          else if (x<0)
+        	  y=-1;
+          System.out.println(y); 
+      }
+   }
+}
+
+
+17.test30005计算个人所得税
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个职工的月薪salary，输出应交的个人所得税tax。
+tax = rate * (salary-850)
+当 salary <= 850 时，rate = 0%;
+当 850 < salary <= 1350 时，rate = 5%;
+当 1350 < salary <= 2850 时，rate = 10%;
+当 2850 < salary <= 5850 时，rate = 15%;
+当 5850 < salary 时，rate = 20%;
+例：括号内是说明
+输入
+5   (repeat=5)
+1010.87
+32098.76
+800
+4010
+2850
+输出
+tax=8.04
+tax=6249.75
+tax=0.0
+tax=474.0
+tax=200.0
+
+
+import java.util.Scanner;
+public class Test30005 {
+   public static void main(String[] args){
+      int ri, repeat;
+      float rate, salary, tax;
+	  Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          salary=in.nextFloat();
+            /*------------------*/
+          if(salary<=850)
+        	tax =0;
+          else if(salary<=1350)
+          {  rate=0.05f;
+             tax=rate*(salary-850);  
+          }
+          else if(salary<=2850)
+          {
+        	  rate=0.10f;
+              tax=rate*(salary-850);
+          }
+       	  else if(salary<=5850)
+          {
+        	  rate=0.15f;
+              tax=rate*(salary-850);
+          }
+          else
+          {
+        	  rate=0.20f;
+              tax=rate*(salary-850);
+          }
+          System.out.println("tax="+(int)(tax*100+0.5)/100.0); 
+      }
+   }
+}
+
+
+18.test30006显示水果的价格
+
+/*以下4种水果的单价分别是3.00元/公斤，2.50元/公斤，4.10元/公斤，10.20元/公斤。
+
+[1] apples
+[2] pears
+[3] oranges
+[4] grapes
+输入水果的编号，输出该水果的单价。如果输入不正确的编号，显示单价为0。
+例：括号内是说明
+输入
+1   (repeat=1) 
+3   (oranges的编号) 
+输出
+[1] apples
+[2] pears
+[3] oranges
+[4] grapes
+price=4.1
+*/
+
+import java.util.Scanner;
+public class Test30006{
+   public static void main(String[] args){
+      int ri, repeat;
+      int choice;
+      float price;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+    	  System.out.println("[1] apples");
+    	  System.out.println("[2] pears");
+    	  System.out.println("[3] oranges");
+    	  System.out.println("[4] grapes");
+           choice=in.nextInt();
+            /*------------------*/
+           if (choice==1)
+        	   price=3f;
+           else if(choice==2)
+        	   price=2.5f;
+           else if (choice==3)
+        	   price=4.1f;
+           else if (choice==4)
+        	   price=10.2f;
+           else
+        	   price=0;
+           
+           System.out.println("price="+price); 
+      }
+   }
+}
+
+
+19.test30007字母转换
+程序填空，不要改变与输入输出有关的语句。
+输入一批以问号“?”结束的字符，对“?”以前的每一个字符，如果它是大写字母，输出相应的小写字母；如果它是小写字母，输出相应的大写字母；否则，原样输出。
+例：
+输入
+F=y?
+输出
+f=Y
+
+
+import java.io.*;
+public class Test30007 {
+   public static void main(String[] args)throws IOException{
+      char ch;
+      ch=(char)System.in.read();
+      while(ch!='?')
+      {
+          /*---------------------*/
+          if(ch>='A'&&ch<='Z')
+        	   ch=(char)(ch+32);   
+          else if((ch>='a'&&ch<='z'))
+         	   ch=(char)(ch-32);   
+    	  System.out.print(ch);
+          ch=(char)System.in.read();
+      }
+   }
+}
+
+
+20.test40001求1+1/2+1/3+……1/n
+
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个正整数 n(n<=100)，计算并输出1＋1/2＋1/3＋……＋1/n 。
+例：括号内是说明
+输入
+2   (repeat=1)
+2
+10
+输出
+1.5
+2.9289684*/
+
+
+import java.util.Scanner;
+public class Test40001 {
+	public static void main(String[] args) {
+	   int ri, repeat;
+	   int i, n;
+	   float sum;
+	   Scanner in=new Scanner(System.in);
+	   repeat=in.nextInt();
+	   for(ri=1; ri<=repeat; ri++){
+		   n=in.nextInt();
+		   /*--------------------*/
+		   sum=0;
+		   for(i=1;i<=n;i++)
+		   {
+			   sum=sum+(float)1/i;
+		   }
+		   System.out.println(sum);
+	   }
+	}
+}
+
+
+21.test40002求n！
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个正整数 n(n<=50)，计算并输出n! 。
+例：括号内是说明
+输入
+3   (repeat=2)
+1 
+10
+5
+输出
+1.0
+3628800.0
+120.0*/
+
+
+import java.util.Scanner;
+public class Test40002 {
+	public static void main(String[] args) {
+	   int ri, repeat;
+	   int i, n;
+	   double fact;
+	   Scanner in=new Scanner(System.in);
+	   repeat=in.nextInt();
+	   for(ri=1; ri<=repeat; ri++){
+		   n=in.nextInt();
+		    /*--------------------*/
+		   fact=1;
+		   for(i=1;i<=n;i++)
+			  fact=fact*i; 
+		   System.out.println(fact);
+	   }
+	}
+}
+ 
+
+22.test40003求x的n次幂
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个正实数x和1个正整数 n(n<=50)，计算并输出x的n次幂。
+例：括号内是说明
+输入
+2   (repeat=2)
+1.5 2
+2.0 10
+输出
+2.25
+1024.0
+
+import java.util.Scanner;
+public class Test40003 {
+	public static void main(String[] args) {
+	   int ri, repeat;
+	   int i, n;
+	   double x, mypow;
+	   Scanner in=new Scanner(System.in);
+	   repeat=in.nextInt();
+	   for(ri=1; ri<=repeat; ri++){
+		   x=in.nextDouble();
+		   n=in.nextInt();
+		    /*--------------------*/
+           mypow=1.0;
+           for(i=1;i<=n;i++)
+           {
+        	  mypow=mypow*x; 
+           }
+		   System.out.println(mypow);
+	   }
+	}
+}
+
+
+
+23.test40004求1-1/2+1/3-1/4+……
+/*读入1 个正整数 n(n<=100)，
+计算并输出1－1/2＋1/3－1/4＋……的前n项和(四舍五入保留小数4位)。
+
+例：括号内是说明
+输入
+2   (repeat=2)
+10
+3
+输出
+0.6456
+0.8333*/
+import java.util.Scanner;
+public class Test40004 {
+   public static void main(String[] args) {
+	int ri, repeat;
+	int i, n, flag;
+	float sum;
+	Scanner in=new Scanner(System.in);
+	repeat=in.nextInt();
+	for(ri=1; ri<=repeat; ri++){
+	   n=in.nextInt();
+	    /*--------------------*/
+	   sum=0;
+	   flag=1;
+	   for(i=1;i<=n;i++)
+		  {sum=sum+(float)flag/i;
+	       flag=-flag;}
+	   System.out.println((long)(sum*10000+0.5)/10000.);
+	}
+   }
+}
+ 
+
+24.求1+1/3+1/5+1/7+……
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个正整数 n(n<=100)，计算并输出1＋1/3＋1/5＋1/7＋……的前n项和。
+例：括号内是说明
+输入
+2   (repeat=2)
+10
+3
+输出
+2.133256
+1.5333334
+
+import java.util.Scanner;
+public class Test40005 {
+   public static void main(String[] args) {
+	int ri, repeat;
+	int i, n, temp;
+	float sum;
+	Scanner in=new Scanner(System.in);
+	repeat=in.nextInt();
+	for(ri=1; ri<=repeat; ri++){
+	   n=in.nextInt();
+	    /*--------------------*/
+	  sum=0;
+	  for(i=1;i<=n;i++)
+	  {
+		  sum=sum+1.0f/(2*i-1);
+	  }
+	  System.out.println(sum);
+	}
+   }
+}
+
+
+25.求1-1/3+1/5-1/7+……
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个正实数eps，计算并输出1－1/3＋1/5－1/7＋……，
+直到最后一项的绝对值小于eps为止(要求每一项的绝对值均大于等于eps,并以float类型输出数据)。
+例：括号内是说明
+输入
+2   (repeat=2)
+1E-4
+0.1
+输出
+0.7853482
+0.83492064
+
+import java.util.Scanner;
+public class Test40006 {
+	public static void main(String[] args) {
+	   int ri, repeat;
+	   int temp, flag;  //temp变量干什么用?
+	   int i;  //自己加上的变量
+	   double eps, item, sum;
+	   Scanner in=new Scanner(System.in);
+	   repeat=in.nextInt();
+	   for(ri=1; ri<=repeat; ri++){
+		   eps=in.nextDouble();
+		    /*--------------------*/
+		   sum=0;
+		   item=1.0;
+		   flag=-1;
+		   i=1;
+		   while(Math.abs(item)>=eps)
+		   {
+			   sum=sum+item;
+			   item=(double)flag/(2*i+1);
+			   flag=-flag;
+			   i++;
+		   }
+		   System.out.println((float)sum);
+	   }
+	}
+}
+
+
+26.摄氏温度和华氏温度转换表
+
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2个整数begin和end，分别代表摄氏温度的起止值，
+输出该范围内摄氏温度C和华氏温度F的转换表。
+F = 32 + C * 9 / 5
+输出语句：System.out.println(c+"\t"+f);
+例：括号内是说明
+输入
+1   (repeat=1)
+5 7
+输出
+Celsius Fahrenheit
+5	41
+6	42
+7	44*/
+
+
+import java.util.Scanner;
+public class Test40007 {
+   public static void main(String[] args){
+      int ri, repeat;
+      int begin, c, end, f;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+	   begin=in.nextInt();
+	   end=in.nextInt();
+	   System.out.println("Celsius Fahrenheit");
+	    /*--------------------*/
+	   for(int i=begin;i<=end;i++)
+	   {
+		   c=i;
+		   f= 32 + i * 9 / 5;
+		   System.out.println(c+"\t"+f);
+	   }
+      }
+   }
+}
+
+
+27.求奇数和
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入一批正整数(以零或负数为结束标志)，求其中的奇数和。
+例：括号内是说明
+输入2
+2   (repeat=2)
+1 3 90 7 0
+8 7 4 3 70 5 6 101 -1
+输出
+11
+116
+*/
+
+import java.util.Scanner;
+public class Test40008 {
+   public static void main(String[] args){
+      int ri, repeat;
+      int x, sum;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+          x=in.nextInt();
+           /*--------------------*/
+          sum=0;
+          while(x>0)
+          {
+        	  if (x%2!=0)
+        		  sum=sum+x;
+        	  x=in.nextInt();
+          }
+          
+	 System.out.println(sum);
+      }
+   }
+}
+
+
+
+28.求最大值
+/*程序填空，不要改变与输入输出有关的语句。 
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n, 再输入n个整数，输出最大值。
+例：括号内是说明
+输入
+3   (repeat=3) 
+4 2 123 -100 0 
+4 9 1 -1 8 
+3 1 3 5 
+输出
+123
+9
+5*/
+
+import java.util.Scanner;
+public class Test40009 {
+   public static void main(String[] args){
+      int ri, repeat;
+      int i , max, n, x;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+          /*--------------------*/
+         max=in.nextInt();
+         for(i=1;i<n;i++)
+         {    
+        	 x=in.nextInt();
+        	 if(max<=x)
+        		 max=x;
+          }
+         System.out.println(max);
+      }
+   }
+}
+
+
+29.求整数的位数以及各位数之和
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个整数，输出它的位数以及各位数之和。
+例：括号内是说明
+输入
+4   (repeat=4) 
+123456  -100  -1   99
+输出
+number=6, sum=21 (123456的位数是6, 各位数之和是21)
+number=3, sum=1 (-100的位数是3, 各位数之和是1)
+number=1, sum=1 (-1的位数是1, 各位数之和是1)
+number=2, sum=18 (99的位数是2, 各位数之和是18)*/
+import java.util.Scanner;
+public class Test40010 {
+   public static void main(String[] args){
+      int ri, repeat;
+      int number, sum,n;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+          if(n<0)
+            n=-n;
+          number=(String.valueOf(n)).length();
+          int i;
+          sum=0;
+          for(i=0;i<number;i++){
+        	  sum=sum+n%10;
+        	  n=n/10;
+          }
+         System.out.println("number="+number+", sum="+sum);
+      }
+   }
+}
+
+
+30.求2/1+3/2+5/3+8/5+……
+/*输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n，输出 2/1+3/2+5/3+8/5 +...的前n项之和，
+保留4位小数(不足4位时,不必用0填满4位)。
+（该序列从第2项起，每一项的分子是前一项分子与分母的和，分母是前一项的分子）
+例：括号内是说明
+输入
+3  (repeat=3) 
+1  5  20
+输出
+2.0      (第1项是2.0)
+8.3917   (前5项的和是8.3917)
+32.6603  (前20项的和是32.6603)*/
+
+
+import java.util.Scanner;
+public class Test40011 {
+   public static void main(String[] args) {
+      int ri, repeat;
+      int i,n;
+      float a,b,s,t;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+	   n=in.nextInt();
+	    /*--------------------*/
+	   s=2;
+	   a=2;
+	   b=1;
+	   for(i=2;i<=n;i++)
+	   {
+		   t=a+b;
+		   b=a;
+		   a=t;
+		   s=s+a/b;
+	   }
+		   
+	
+            System.out.println((int)(s*10000+.5)/10000.);
+      }
+   }
+}
+
+
+31.求a+aa+aaa+aa…a
+
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2个正整数a和n, 求a+aa+aaa+aa…a(n个a)之和。
+例：括号内是说明
+输入
+2  (repeat=2)
+2 3 (a=2, n=3)
+8 5 (a=8, n=5)
+输出
+246   (2+22+222)
+98760 (8+88+888+8888+88888)
+
+import java.util.Scanner;
+public class T40012
+{
+  public static void main(String[] args) 
+  {
+	 int ri, repeat;
+	 int i, n, a, sn, tn;
+	 Scanner in=new Scanner(System.in);
+	 repeat=in.nextInt();
+	 for(ri=1; ri<=repeat; ri++)
+	 {
+	    a=in.nextInt();
+	    n=in.nextInt();
+	    /*--------------------*/
+            tn=0;
+            sn=0;
+	    for(i=1;i<=n;i++)
+             {
+    	       tn=tn*10+a;
+    	       sn=sn+tn;
+             }
+	     System.out.println(sn);
+	 }
+   }
+}
+
+
+32.判断素数
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数m，如果它是素数，输出"YES"，否则，输出"NO"
+（素数就是只能被1和自身整除的正整数，1不是素数，2是素数）。
+例：括号内是说明
+输入
+4  (repeat=4) 
+1  2  9  17
+输出
+NO    (1不是素数)
+YES   (2是素数) 
+NO    (9不是素数) 
+YES   (17是素数)*/
+
+
+import java.util.Scanner;
+public class Test40013{
+  public static void main(String args[]){
+      int ri, repeat;
+      int i, m, n;
+      boolean flag;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+        m=in.nextInt();
+          /*--------------------*/
+        flag=true;
+        if (m==1)
+        	flag=false;
+        else
+        { i=2;
+        flag=true;
+        while(i<m&&flag)
+        {
+        	if(m%i==0)
+        		flag=false;
+        	i++;
+        }}
+        if(flag) System.out.println("YES");
+        else System.out.println("NO");
+      }
+   }
+}
+
+
+33.求1+1/2！+……+1/n!
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入1 个正整数n，计算 s 的前n项的和。
+   s = 1 + 1/2! +....+ 1/n! 
+例：括号内是说明
+输入：
+2    (repeat=2)
+2    (n=2)
+10    (n=10)
+输出：
+1.5
+1.7182816
+
+
+import java.util.Scanner;
+public class T40021{
+  public static void main(String args[]){
+      int ri, repeat;
+      int i,n;
+      float s,t=1;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++)
+      {
+        n=in.nextInt();
+        /*--------------------*/
+        s=0;       
+        t=1;   
+        for(i=1;i<=n;i++)
+        {
+          t=t/i;	
+          s=s+t;
+        }
+        System.out.println(s);
+      }
+   }
+}
+
+
+
+34.求各位数字的立方和等于它本身的数
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数m和n(1<=m,n<=1000)，
+输出m 和n之间所有满足各位数字的立方和等于它本身的数。
+输出语句：System.out.println(i);
+例：括号内是说明
+输入：
+2    (repeat=2)
+100 400  (m=100, n=400)
+1 100    (m=1, n=100)
+输出：
+153 (1*1*1+5*5*5+3*3*3=153)
+370 (3*3*3+7*7*7=370)
+371 (3*3*3+7*7*7+1*1*1=371)
+1
+*/
+
+import java.util.Scanner;
+public class Test40022{
+  public static void main(String args[]){
+      int ri, repeat;
+      int i, digit, m, n, number, sum;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+        m=in.nextInt();
+        n=in.nextInt();
+         /*------------------*/
+        for(i=m;i<=n;i++)
+        {
+        	int a=i/100;
+        	int b=(i-a*100)/10;
+        	int c=i%10;
+        	sum=a*a*a+b*b*b+c*c*c;
+        	if(sum==i)
+        		System.out.println(i);
+        		
+        }
+      }
+   }
+}
+
+
+35.统计素数并求和
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数m和n(1<=m,n<=500)，统计并输出m 和n之间的素数的个数以及这些素数的和。
+例：括号内是说明
+输入：
+3      (repeat=2)
+1 10   (m=1, n=10)
+20 35  (m=20, n=35)
+14 16  (m=14, n=16)
+输出：
+count=4, sum=17    (1到10之间有4个素数：2,3,5,7)
+count=3, sum=83    (20到35之间有3个素数：23, 29, 31)
+count=0, sum=0     (14到16之间没有素数)
+*/
+
+import java.util.Scanner;
+public class Test40023 { 
+	public static void main(String args[])
+	{ 
+		int ri, repeat;
+       int count,i,j,k,m,n,sum;
+       Scanner in = new Scanner(System.in);
+       repeat = in.nextInt();
+       for (ri = 1; ri <= repeat; ri++) {
+    	   m = in.nextInt();
+    	   n = in.nextInt();
+		   count = 0;
+		    sum = 0;
+		boolean f = true; 
+		if (m == 1) 
+		{
+			m = 2; 
+	  }
+		for (i = m; i <= n; i++)
+		{
+			f = true;
+			for (j = 2; j <= i / 2; j++)
+			{ if (i % j == 0) 
+			{ f = false; break; }
+			}
+			if (f == true) 
+			{ count++;
+			sum=sum+i;
+			}
+		}
+		System.out.println("count=" + count+", sum=" + sum); 
+		} 
+  }
+
+}
+
+
+
+36.统计单词
+/*输入一行字符，统计其中单词的个数。各单词之间用空格分隔，空格数可以是多个。 
+例：括号内是说明
+输入
+2   (repeat=2)
+Reold building  room   123
+  Programming is fun
+输出
+4
+3 */
+import java.util.Scanner;
+public class Test40031{
+  public static void main(String []args ){
+     int ri, repeat,count, word,i;
+     String line;
+     char c;
+     Scanner in=new Scanner(System.in);
+     repeat=in.nextInt();in.nextLine();
+     for(ri=1; ri<=repeat; ri++){
+        line=in.nextLine();
+        /*---------*/ 
+        word=count=0;
+        for(i=0;i<line.length();i++)           //弄清楚数量
+        	{c=line.charAt(i);
+        	if(c!=' ')
+        	{
+        	   if (word==0)
+        	   {
+        		   count++;
+        		   word=1;
+        	   }
+        	}else word=0;
+        	}
+       System.out.println( count);
+     }
+  }
+}
+
+
+37.输出一个整数的各位数字
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个整数，从高位开始逐位输出它的各位数字。
+输出语句：System.out.print(digit+" ");
+例：括号内是说明
+输入
+3   (repeat=3) 
+123456
+-600
+8
+输出
+1 2 3 4 5 6
+6 0 0
+8
+*/
+
+import java.util.Scanner;
+public class Test40032{
+    public static void main(String []args ){
+        int ri, repeat;
+        int digit;
+        long n, temp, pow;
+        Scanner in=new Scanner(System.in);
+        repeat=in.nextInt();
+        for(ri=1; ri<=repeat; ri++){
+             n=in.nextLong();
+             /*---------*/
+             if(n<0)
+            	 n=-n;
+             String s=String.valueOf(n);
+             for(digit=0;digit<s.length();digit++)
+             {
+            	 System.out.print(s.charAt(digit)+" ");
+             }
+             System.out.println();
+        }
+    }
+}
+
+
+
+38.简单计算器
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+程序模拟简单运算器的工作：输入一个算式(没有空格)，
+遇等号"="说明输入结束，输出结果。
+假设计算器只能进行加减乘除运算，运算数和结果都是整数，
+4种运算符的优先级相同，按从左到右的顺序计算。
+例：括号内是说明
+输入
+2   (repeat=2)
+15 + 2 / 3 =    (数字与运算符之间有一空格)
+1 + 2 * 10 - 10 / 2 =    (数字与运算符之间有一空格)
+输出
+5
+10 
+*/
+/*补充知识:in.next()与in.nextline()的区别
+ in.next只接受一个字,不能接受一个带有空格的字符串,如下:
+ 例如输入:  Show me --(回车)
+用next()只能得到Show,因为遇到空格表示结束,但是nextline()则要遇到回车才知道结束.
+可以看一个例子,演示给大家看,如下:
+-----------------------------------------
+import java.util.Scanner;
+public class Test60011{
+   public static void main(String []args)
+   {
+	   String s1_1,s1_2,s2;
+	   Scanner in=new Scanner(System.in);
+       s1_1=in.next();
+       System.out.println(s1_1);
+       System.out.println("----------");
+       in.nextLine(); // 把剩余的吃掉
+       s2=in.nextLine();
+       System.out.println(s2);
+       System.out.println("----------");
+       s1_1=in.next();
+       s1_2=in.next();
+       System.out.println(s1_1+"       "+s1_2);
+   }
+}
+-------------------------------------------
+ */
+import java.util.Scanner;
+public class Test40033{
+  public static void main(String args[]) {
+	   int ri, repeat;
+	   int op1, op2, res;
+	   char operator;
+	   Scanner in=new Scanner(System.in);
+	   repeat=in.nextInt();
+	   for(ri=1; ri<=repeat; ri++){
+	     op1=in.nextInt();
+	     operator =(in.next()).charAt(0);  //
+	     res=op1;  //res看作最后的结果
+	     while(operator!='=')
+	     {
+	    	 op2=in.nextInt();
+	    	 if(operator=='+') res+=op2;
+	    	 else if(operator=='-') res-=op2;
+	    	 else if(operator=='*') res*=op2;
+	    	 else res/=op2;
+	    	 operator =(in.next()).charAt(0);
+	     }
+	/*---------*/
+	     System.out.println(res);
+	   }
+  }
+}
+
+
+39.求1+1/2！+……1/N！
+//求1+1/2!+1/3!+....(用方法求n!)
+import java.util.Scanner;    //引入
+public class T50001 {
+	public static void main(String[] args)
+	{
+		int ri,repeat;
+		int i,n;
+		double s;
+		Scanner in=new Scanner(System.in);
+		repeat=in.nextInt();
+		for(ri=1;ri<=repeat;ri++)
+                {
+			n=in.nextInt();
+			/*---------------*/
+			s=0;
+			for(i=1;i<=n;i++)
+			{
+			  s=s+1/fact(i);	
+			}
+                        System.out.println((long)(s*10000+0.5)/10000.0);
+		}
+	}
+	/*---------------*/
+	public static double fact(int n)
+	{
+		double t=1;
+		int i;
+		if(n==1)
+		  return 1;
+		else
+		{  for(i=1;i<=n;i++)
+		  {
+			t=t*i;
+		  }
+ 		  return t;
+		}
+	}
+}
+
+
+40.求a+aa+aaa+……（用方法）
+//求a＋aa＋aaa＋aa…a
+import java.util.Scanner;
+public class T50002{
+     public static void main(String args[])
+     {
+	  int ri, repeat;
+	  int i, n,a;
+	  long sn;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1; ri<=repeat; ri++) 
+          {
+		  a=in.nextInt();
+		  n=in.nextInt();
+		  /*------------*/
+                  sn=0;
+		  for(i=1;i<=n;i++)
+                   {
+                     sn=sn+fn(a,i);        	  
+                   }
+		  System.out.println(sn);
+	  }
+     }
+     /*------------*/
+     public static long fn(int a,int m)
+     {   int i;
+         long t=0;
+         for(i=0;i<=m-1;i++)   //i仅起到次数作用
+         {
+           t=t*10+a;  	  
+         }
+         return t;
+     }
+}
+
+
+
+41.统计一个整数中数字的个数
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入1 个整数，统计并输出该数中2的个数。
+要求定义并调用函数countdigit(number,digit)，
+它的功能是统计整数number中数字digit的个数。例如，countdigit(10090,0)的返回值是3。
+例：括号内是说明
+输入：
+3       (repeat=3)
+-21902
+2
+345543
+输出：
+count=2       (-21902中有2个2)
+count=1       (有1个2)
+count=0       (345543中没有2)*/
+
+
+import java.util.Scanner;
+public class Test50003{
+  public static void main(String args[]){
+	  int ri, repeat;
+	  int count;
+	  long n;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1; ri<=repeat; ri++){
+		  n=in.nextInt();
+		  /*---------*/
+		  count=countdigit(n,2);
+		  System.out.println("count="+count);
+	  }
+  }
+  /*------------*/
+  static int countdigit(long n,int digit)
+  {   int count=0;
+	  digit=2;
+	  String a=String.valueOf(n);
+	  int b=a.length();
+	  for(int i=0;i<b;i++)
+	  {
+	     char c=a.charAt(i);
+	     if (c=='2')
+	    	 count++;
+	  }
+	  return (count);
+  }
+}
+
+
+
+42.判断素数（用方法）
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n，如果它是素数，输出"YES"，否则，输出"NO"
+（素数就是只能被1和自身整除的正整数，1不是素数，2是素数）。
+要求定义并调用函数prime(m)判断m是否为素数。
+例：括号内是说明
+输入
+4  (repeat=4) 
+1  2  9  17
+输出
+NO    (1不是素数)
+YES   (2是素数) 
+NO    (9不是素数) 
+YES   (17是素数)
+
+import java.util.Scanner;
+public class Test50004
+ {
+	public static void main(String[] args)
+        {
+	    int ri, repeat,n;
+	    boolean flag;
+	    Scanner in=new Scanner(System.in);
+	    repeat=in.nextInt();
+	    for(ri=1; ri<=repeat; ri++)
+	    {
+	      n=in.nextInt();
+	      /*---------*/
+	      flag=prime(n);
+	      if(flag)
+	       	System.out.println("YES");
+	      else 
+	      	System.out.println("NO");
+	    }
+	}
+	 /*------------*/
+	 public static boolean prime(int m)
+	 {
+		  boolean t=false;
+		  int i;
+		  for(i=2;i<m;i++)
+		  {
+			  if(m%i==0)
+			  {  break; }	  
+		  }
+		 if(i==m)
+		    t=true;
+		 return t;
+	  }		   
+}
+
+
+43.统计素数并求和
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数m和n(1<=m,n<=500)，
+统计并输出m 和n之间的素数的个数以及这些素数的和
+（素数就是只能被1和自身整除的正整数，1不是素数，2是素数）。
+要求定义并调用函数prime(m)判断m是否为素数。
+例：括号内是说明
+输入：
+3      (repeat=3)
+1 10   (m=1, n=10)
+20 35  (m=20, n=35)
+14 16  (m=14, n=16)
+输出：
+count=4, sum=17    (1到10之间有4个素数：2,3,5,7)
+count=3, sum=83    (20到35之间有3个素数：23, 29, 31)
+count=0, sum=0     (14到16之间没有素数)
+
+
+import java.util.Scanner;
+public class Test50005{
+  public static void main(String args[]){
+	  int ri, repeat;
+	  int count, i, m, n, sum;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1; ri<=repeat; ri++){
+	      m=in.nextInt();
+	      n=in.nextInt();
+	  /*---------*/
+	      System.out.println("count="+count+", sum="+sum);
+	}
+  }
+  /*------------*/
+}
+
+
+44.输出Fibonacci序列
+/*程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数m和n(1<=m,n<=10000)，输出m 和n之间所有的Fibonacci数。
+Fibonacci 序列（第1项起）：1  1  2  3  5  8  13  21 ......
+要求定义并调用函数fib(n)，它的功能是返回第n项Fibonacci数。
+例如，fib(7)的返回值是13。
+输出语句：System.out.print(f+" ");
+
+例：括号内是说明
+输入：
+3      (repeat=3)
+1 10   (m=1, n=10)
+20 100  (m=20, n=100)
+1000 6000  (m=1000, n=6000)
+输出：
+1 1 2 3 5 8        (1到10之间的Fibonacci数)
+21 34 55 89     (20到100之间的Fibonacci数)
+1597 2584 4181   (1000到6000之间的Fibonacci数)
+*/
+
+import java.util.Scanner;
+public class Test50006{
+  public static void main(String args[]){
+	  int ri,repeat;
+	  int i, m, n;
+	  long f;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1; ri<=repeat; ri++){
+	      m=in.nextInt();
+	      n=in.nextInt();
+	  /*---------*/
+	      for(i=1;i<=n;i++)
+	      {
+	    	  f=fib(i);
+	    	  if(f>=m&&f<=n)
+	    	  System.out.print(f+" ");
+	      }
+	      System.out.println();
+	}
+  }
+  /*------------*/
+  static int fib(int i)
+  {   int a=1,b=1,t,f=1;
+      for(int j=3;j<=i;j++)
+      {   
+    	  f=a+b;
+    	  t=a+b;
+    	  a=b;
+    	  b=t;
+     }
+	  return f;
+  }
+}
+
+
+
+45.求完数
+/*输入2 个正整数m和n(1<=m,n<=1000)，输出m 到n之间的所有完数
+（完数就是因子和与它本身相等的数）。
+要求定义并调用函数factorsum(number)，它的功能是返回number的因子和。
+例如，factorsum(12)的返回值是16（1+2+3+4+6）。
+输出语句：System.out.print(i+" ");
+例：括号内是说明
+输入：
+2    (repeat=2)
+20 500  (m=100, n=400)
+1 100    (m=1, n=100)
+输出：
+28 496
+1 6 288*/
+import java.util.Scanner;
+public class Test50007{
+  public static void main(String args[]){
+	  int ri,repeat;
+	  int i, m, n;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1;ri<=repeat;ri++){
+		  m=in.nextInt();
+		  n=in.nextInt();
+		  /*---------*/
+		  for(i=m;i<=n;i++)
+		  {
+			  factorsum(i);
+			  if (factorsum(i)==i)
+				  System.out.print(i+" "); 
+		  }
+		  System.out.println();
+	  }
+  }
+  /*---------*/
+  static int factorsum(int n)
+  {   int s=0;
+      for(int i=2;i<n;i++)
+    	  if (n%i==0)
+    		  s=s+i;
+      s=s+1;
+	  return s;
+  }
+}
+
+
+46.求各位数字的立方和等于它本身的数
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数m和n(1<=m,n<=1000)，
+输出m 到n之间的所有满足各位数字的立方和等于它本身的数。
+要求定义并调用函数is(number)判断number的各位数字之立方和是否等于它本身。
+输出语句：System.out.print(i+" ");
+例：括号内是说明
+输入：
+2    (repeat=2)
+100 400  (m=100, n=400)
+1 100    (m=1, n=100)
+输出：
+153 370 371 (1*1*1+5*5*5+3*3*3=153; 3*3*3+7*7*7=370; 3*3*3+7*7*7+1*1*1=371)
+1
+
+
+import java.util.Scanner;
+public class Test50008{
+  public static void main(String args[]){
+	  int ri,repeat;
+	  int i, m, n;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1;ri<=repeat;ri++){
+	    m=in.nextInt();
+	    n=in.nextInt();
+	/*---------*/
+	    System.out.println();
+	  }
+  }
+  /*---------*/
+}
+
+
+
+47.将一个整数逆序输出
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个整数，将它逆序输出。
+要求定义并调用函数reverse(number)，它的功能是返回number的逆序数。
+例如reverse(12345)的返回值是54321。
+例：括号内是说明
+输入
+4   (repeat=4) 
+123456 -100 -2 99
+输出
+654321
+-1
+-2
+99
+
+
+
+import java.util.Scanner;
+public class Test50009{
+  public static void main(String args[]){
+	  int ri,repeat;
+	  long n, res;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1;ri<=repeat;ri++)
+	  {
+		  n=in.nextInt();
+		  /*---------*/
+		  res=reverse(n);
+		  System.out.println(res);
+	  }
+  }
+  /*---------*/
+  public static long reverse(long number)
+  {
+      long temp;
+      String s,s1="";
+      if(number>=0)      //可以试以下负数会出问题
+    	  temp=number;
+      else
+          temp=-number;
+      s=String.valueOf(temp);  
+      for(int i=0;i<s.length();i++)
+      {
+    	  s1+=s.charAt(s.length()-i-1);//这里有一个结论可以记住,什么结论?
+      }                                //一个整数和一个空字符串运算呢？
+	  //System.out.println(s1);
+      temp=Long.parseLong(s1);
+      if(number>=0) 
+          return temp;
+      else
+    	  return -temp;
+  }
+}
+
+
+
+48。十进制转换二进制
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数 repeat (0<repeat<10)，做 repeat 次下列运算：
+输入1 个正整数n，将其转换为二进制后输出。
+要求定义并调用函数 dectobin(n)，它的功能是输出 n 的二进制。
+例如，调用dectobin(10)，输出1010。
+输出语句：System.out.print(t);   //t为某位二进制数
+例：括号内是说明
+输入：
+3    (repeat=3)
+15
+100
+0
+输出：
+1111
+1100100
+0
+
+import java.util.Scanner;
+public class Test50010{
+	static void dectobin(int n)
+    {
+		String s="";
+		do{
+			s=Integer.toString(n%2)+s;  //如果直接用n%2+s呢?思考!
+			n=n/2;
+		}while(n>0);
+		System.out.println(s);  //输出的要求和题目不一样,是吗?
+	}
+  public static void main(String args[]){
+	  int ri,repeat;
+	  int i,n;
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+	  for(ri=1;ri<=repeat;ri++){
+	    n=in.nextInt();
+            /*---------*/	   
+        dectobin(n);
+	    System.out.println();
+	  }
+	}
+  /*---------*/
+}
+
+
+
+
+49。求平均值
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n (1<n≤10)，再输入n个整数，输出平均值。
+例：括号内是说明
+输入
+2   (repeat=2) 
+3 1 2 -6
+5 12 2 5 4 0 
+输出
+aver=-1.0
+aver=4.6
+
+import java.util.Scanner;
+public class Test60001{
+	public static void main(String []args){
+		int ri, repeat;
+		int i, n, sum,a[];
+		float aver;
+		Scanner in=new Scanner(System.in);
+		repeat=in.nextInt();
+		for(ri=1; ri<=repeat; ri++){
+		    n=in.nextInt();
+		    a=new int[n];
+		    for(i=0; i<n; i++)
+		        a[i]=in.nextInt();
+		    /*---------*/
+		    System.out.println("aver="+aver);
+		}
+	}
+}
+
+
+50。求最大值及其下标
+/*输入一个正整数n (1<n≤10)，再输入n个整数，输出最大值极其下标
+（设最大值惟一，下标从0开始）。
+例：括号内是说明
+输入
+3   (repeat=3) 
+3 1 6 4
+3 10 8 1
+5 1 2 5 4 0 
+输出
+max=6,index=1    (最大值6的下标是1)
+max=10,index=0   (最大值10的下标是0)
+max=5,index=2    (最大值5的下标是2)*/
+
+import java.util.Scanner;
+public class Test60002{
+    public static void main(String []args){
+        int ri, repeat;
+        int i, index, n, a[];
+        Scanner in=new Scanner(System.in);
+        repeat=in.nextInt();
+        for(ri=1; ri<=repeat; ri++){
+             n=in.nextInt();
+             a=new int[n] ;
+             for(i=0; i<n; i++)
+                  a[i]=in.nextInt();
+                   /*---------*/
+                index=0;
+                for(int j=1;j<n;j++)
+                {
+                	if(a[index]<a[j])
+                		index=j;
+                }
+             System.out.println("max="+a[index]+",index="+index);
+        }
+   }
+}
+
+51。逆序输出
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n (1<n≤10)，再输入n个整数，按逆序输出这些数。
+例：括号内是说明
+输入
+2   (repeat=2) 
+4 10 8 1 2
+5 1 2 5 4 0 
+输出
+2 1 8 10
+0 4 5 2 1
+
+import java.util.Scanner;
+public class Test60003{
+   public static void main(String []args)
+   {
+      int ri, repeat;
+      int i, n, temp,a[];
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+         a=new int[n];
+         for(i=0; i<n; i++)
+            a[i]=in.nextInt();
+         for(i=0;i<n/2;i++)
+       	 {
+              temp=a[i];
+              a[i]=a[n-1-i];
+              a[n-1-i]=temp;
+          }
+         for(i=0; i<n; i++)
+            System.out.print(a[i]+" ");
+         System.out.println();
+      }
+   }
+}
+
+
+52。交换最小值和最大值
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n，再输入n个整数，将最小值与第一个数交换，
+最大值与最后一个数交换，然后输出交换后的n个数。
+例：括号内是说明
+输入
+3   (repeat=3) 
+5 4 3 5 1 2
+4 1 5 6 7
+5 5 4 3 2 1 
+输出
+1 3 2 4 5
+1 5 6 7
+1 4 3 2 5
+
+
+import java.util.Scanner;
+public class Test60004{
+   public static void main(String []args){
+      int ri, repeat;
+      int i, index, n, t,a[];
+	  Scanner in=new Scanner(System.in);
+	  repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++)
+      {
+    	  n=in.nextInt();
+          a=new int[n];
+          for(i=0; i<n; i++)
+              a[i]=in.nextInt();
+          index=0;
+          for(i=1; i<n; i++)
+             if(a[i]>a[index]) index=i;
+          t=a[n-1];a[n-1]=a[index];a[index]=t;
+          index=0;
+          for(i=1; i<n; i++)
+             if(a[i]<a[index]) index=i;
+          t=a[0];a[0]=a[index];a[index]=t;
+          /*---------*/
+          for(i=0; i<n; i++)
+             System.out.print(a[i]+" ");
+          System.out.println();
+        }  
+  }
+}
+
+53。排序
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一个正整数n，再输入n个整数，将它们从大到小排序后输出。
+例：括号内是说明
+输入
+3   (repeat=3) 
+4 5 1 7 6
+3 1 2 3
+5 5 4 3 2 1 
+输出
+7 6 5 1 
+3 2 1
+5 4 3 2 1
+
+import java.util.Scanner;
+public class Test60005{
+   public static void main(String []args){
+      int ri, repeat;
+      int i, index, k, n, temp;
+      int a[]=new int[10];
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+         for(i=0; i<n; i++)
+            a[i]=in.nextInt();
+         for(i=0;i<n;i++){
+        	 index=i;
+        	 for(k=i+1;k<n;k++)
+        		 if(a[k]>a[index]) index=k;
+        	 if(index!=i){
+        		 temp=a[i];a[i]=a[index];a[index]=temp;
+        	 }
+         }
+         for(i=0; i<n; i++)
+            System.out.print(a[i]+" ");
+         System.out.println();
+      }
+   }
+}
+
+54。矩阵运算
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+读入 1 个正整数 n(1≤n≤6), 再读入 n 阶方阵 a , 
+计算该矩阵除副对角线、最后一列和最后一行以外的所有元素之和.
+(副对角线为从矩阵的右上角至左下角的连线)
+例：括号内是说明
+输入：
+1  (repeat=1)
+4  (n=4)
+2 3 4 1
+5 6 1 1
+7 1 8 1
+1 1 1 1
+sum=35   (2+3+4+5+6+7+8=35)
+
+
+import java.util.Scanner;
+public class Test60011{
+   public static void main(String []args){
+      int ri, repeat;
+      int a[][],i,j,n,sum;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+         a=new int[n][n];
+         sum=0;
+         for(i=0; i<n; i++)
+            for(j=0;j<n;j++)
+            	a[i][j]=in.nextInt();
+         for(i=0; i<n-1; i++)
+             for(j=0;j<n-1;j++)
+            	 if(i+j!=n-1) sum+=a[i][j];
+         System.out.println("sum="+sum);
+      }
+   }
+}
+
+55。加法口诀表
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入 1 个正整数 n(1≤n≤10), 输出一张 20 以内的加法口诀表. 
+加数与被加数都不大于 n, 分列第一行和第一列.
+(将加数、被加数、和放入一个二维数组中, 再输出该数组)
+例：括号内是说明
+输入：
+1       (repeat=1)
+3       (n=3)
+输出:
++   1   2   3   
+1   2   
+2   3   4   
+3   4   5   6   
+
+import java.util.Scanner;
+public class Test60012{
+   public static void main(String []args){
+      int ri, repeat;
+      int i,j,n,a[][]=new int[10][10];
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+         for( j=1; j<=n; j++ ){//生成第一行
+        	 a[0][j]=j;
+         }
+         for( i=1; i<=n; i++ ){//生成第一列
+        	 a[i][0]=i;
+         }
+         for( i=1; i<=n; i++ )//生成和列表
+        	 for(j=1;j<=i;j++)
+        		 a[i][j]=a[i][0]+a[0][j];
+         
+         for( i=0; i<=n; i++ ){
+             for( j=0; j<=n; j++ )
+                 if(i==0&&j==0) System.out.print( "+   ");
+                 else if(i==0||j<=i) System.out.printf( "%-4d", a[i][j]);  //输出占4位,不足4位右边填空格
+             System.out.println();
+         }
+      }
+   }
+}
+
+
+56。判断上三角函数
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入1 个正整数 n (1≤n≤6)和n 阶方阵a中的元素，
+如果a是上三角矩阵, 输出"YES", 否则, 输出"NO"。
+(上三角矩阵，即主对角线以下的元素都为0, 主对角线为从矩阵的左上角至右下角的连线)
+例：括号内是说明
+输入：
+2       (repeat=2)
+3  1  2  3   0  4  5  0  0  6 (n=3)
+2  1  0  -8  2   (n=2)
+输出：
+YES 
+NO
+
+
+import java.util.Scanner;
+public class T60013{
+   public static void main(String []args)
+   {
+      int ri, repeat;
+      int a[][]=new int[6][6],i,j,n;
+      boolean flag;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++)
+      {
+         n=in.nextInt();
+         for (i=0;i<n;i++)
+             for (j=0;j<n;j++)
+                  a[i][j]=in.nextInt();
+  	     flag=true;
+         for (i=0;i<n;i++)
+         { 	 for (j=0;j<n;j++)
+              {
+        	      if(i>j&&a[i][j]!=0)
+        	    	  flag=false;
+              }
+         }
+         if(flag)
+        	 System.out.println("YES");
+         else
+        	 System.out.println("NO");
+     }
+   }
+ }
+
+
+57。求矩阵每行元素之和
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入2 个正整数 m 和 n (1≤m, n)，然后输入该m 行 n 列矩阵a中的元素，
+分别求出各行元素之和, 并存入一维数组row中, 再输出row.
+例：括号内是说明
+输入：
+1    (repeat=1)
+3 2  (m=3, n=2)
+6  3
+1  -8
+3 12
+输出：
+sum of row 0 is 9
+sum of row 1 is -7
+sum of row 2 is 15
+
+import java.util.Scanner;
+public class Test60014{
+   public static void main(String []args){
+      int ri, repeat;
+      int i,j,m,n,a[][],row[];
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         m=in.nextInt();
+         n=in.nextInt();
+         a=new int[m][n];
+         row=new int[m];
+         for (i=0;i<m;i++)
+             for (j=0;j<n;j++)
+                  a[i][j]=in.nextInt();
+         for(i=0;i<m;i++)
+        	 for(j=0;j<n;j++)
+        		 row[i]=row[i]+a[i][j];
+         for(i=0;i<m;i++)
+              System.out.println("sum of row "+i+" is "+row[i]);
+      }
+   }
+}
+
+
+58。找鞍点
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入 1 个正整数 n和n 阶方阵a中的元素，如果找到a 的鞍点
+（鞍点的元素值在该行上最大, 在该列上最小）, 
+就输出它的下标, 否则,输出"NO"（设a最多有1个鞍点）。
+例：括号内是说明
+输入：
+2        (repeat=2)
+4  1  7  4  1 4  8  3  6 1  6  1  2 0  7  8  9  (n=4)
+2  1 7 4 1   (n=2)
+输出：
+a[2][1]=6
+NO 
+
+import java.util.Scanner;
+public class Test60019{
+   public static void main(String []args){
+      int ri, repeat;
+      int i,j,k,row,col,n,a[][];
+      boolean flag;
+      Scanner in=new Scanner(System.in);
+      repeat=in.nextInt();
+      for(ri=1; ri<=repeat; ri++){
+         n=in.nextInt();
+         flag=false;
+         a=new int[n][n];
+         for (i=0;i<n;i++)
+             for (j=0;j<n;j++)
+                  a[i][j]=in.nextInt();
+         
+         row=0;col=0;
+         for(i=0;i<n;i++)
+         {
+        	 col=0;
+        	 for(j=0;j<n;j++) //先考察一行中的最大位置,定下来是第几个(给col)
+        		 if(a[i][j]>a[i][col]) col=j;
+        	 row=i;
+        	 for(k=0;k<n;k++)  //再按行走一遍,看看有没有比它小的,如果没有,则row就是i
+        		 if(a[k][col]<a[row][col]) row=k;
+        	 if(row==i) {
+        		 flag=true;
+        		 break;
+        	 }
+         }
+         /*---------*/
+
+         if(flag)
+        	 System.out.println("a["+row+"]["+col+"]="+a[row][col]);
+         else 
+        	 System.out.println("NO");
+      }
+   }
+}
+
+
+59。求字符串长度
+程序填空，不要改变与输入输出有关的语句。
+连续输入一批以 # 结束的多串字符。
+统计并输出每串字符的长度。
+输出使用：System.out.println(len);
+例：括号内是说明
+输入：
+hello 12#abc+0#   (连续输入2串字符“hello 12”和“abc+0”)
+输出：
+8     (“hello 12”的长度是8)
+5    （“abc+0”的长度是5） 
+
+import java.util.Scanner;
+public class Test60021{
+   public static void main(String []args){
+      int len,count,i,k;
+      char ch;
+      String str;
+      Scanner in=new Scanner(System.in);
+      str=in.nextLine();
+       /*---------*/
+      count=0;len=str.length();
+      for(i=0;i<len;i++)
+      {
+    	  ch=str.charAt(i);
+    	  if(ch!='#')
+    		  count++;
+    	  else 
+    	  {
+    		  System.out.println(count);
+    		  count=0;
+    	  }
+      }
+   }
+}
+
+
+
+
+60。统计大写辅音字母
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数n (0<n<10)，做n次下列运算：
+输入一行字符串，统计并输出字符串中大写辅音字母的个数
+(大写辅音字母:除“A”,“E”,“I”,“O”,“U”以外的大写字母)。
+例：括号内是说明
+输入：
+3   (输入3个字符串)
+HELLO
+IT12
+uieiaba
+输出：
+3     ("HELLO"中有3个大写辅音字母)
+1    （"IT12"中有1个大写辅音字母） 
+0    （"uieiaba"中没有大写辅音字母） 
+
+
+import java.util.Scanner;
+public class Test60022{
+    public static void main(String []args){
+         int count,i,j,n;
+         char ch;
+         String str;
+         Scanner in=new Scanner(System.in);
+         n=in.nextInt();
+         in.nextLine();
+         for(i=1;i<=n;i++){
+             str=in.nextLine();
+             count=0;
+             for(j=0;j<str.length();j++){
+            	 ch=str.charAt(j);
+            	 if(ch>'A' && ch<='Z' && ch!='E' && ch!='I' && ch!='O' && ch!='U') 
+            		 count++;
+             }
+             /*---------*/
+             System.out.println(count);
+         }
+   }
+}
+
+61。查找字符
+程序填空，不要改变与输入输出有关的语句。
+先输入一个字符ch。然后输入一个正整数n (0<n<10)，做n次下列运算：
+输入一行字符串，在字符串中查找该字符(ch)，如果找到，则输出
+该字符在字符串中最后出现的位置(从0开始)；否则输出“Not Found”。
+例：括号内是说明
+输入：
+m                         (输入一个字符)
+3                          (要输入3行字符串)
+moon
+programming
+1234   
+输出：
+0     (m在"moon"中最后出现位置是0)
+7     (m在"programming"中最后出现位置是7)
+Not Found    ("1234"中没有m)
+
+import java.util.Scanner;
+public class Test60023{
+    public static void main(String []args){
+         int index,i,n,j;
+         char ch;
+         String str;
+         Scanner in=new Scanner(System.in);
+         ch=(in.nextLine()).charAt(0);
+         n=in.nextInt();
+       	 in.nextLine();
+         for(i=1;i<=n;i++)
+         {
+             str=in.nextLine();
+             /*---------*/
+             index=-1;   //目的是做一个标记
+             for(j=0;j< str.length();j++)
+             {
+            	 if(ch==str.charAt(j))
+                    index=j;
+             }
+             if(index>=0)
+            	 System.out.println(index);
+             else
+            	 System.out.println("Not Found");
+         }
+   }
+}
+
+62。字符串替换
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一行字符串，生成一个新的字符串，
+将原字符串中的大写字母用下面列出的对应大写字母替换, 其余字符不变, 输出新字符串. 
+原字母   对应字母
+    A ──→ Z
+    B ──→ Y
+    C ──→ X
+    D ──→ W
+       ……
+    X ──→ C
+    Y ──→ B
+    Z ──→ A
+例：括号内是说明
+输入：
+3     (输入3行字符串)
+A flag of USA
+IT12
+oueiaba
+输出：
+Z flag of FHZ
+RG12
+oueiaba
+
+import java.util.Scanner;
+public class Test60024{
+    public static void main(String []args){
+        int ri, repeat, i;
+        char ch;
+        String str1,str2;
+        Scanner in=new Scanner(System.in);
+        repeat=Integer.parseInt(in.nextLine());
+        for(ri=1; ri<=repeat; ri++){
+             str1=in.nextLine();
+             str2="";
+             for(i=0;i<str1.length();i++)
+             {
+            	 ch=str1.charAt(i);
+            	 if(ch>='A' & ch<= 'Z')
+            	 {
+            		 ch=(char)(26-(ch-'A')+'A'-1);
+            		 str2+=ch;
+            	 }
+            		 
+            	 else str2+=ch;
+             }
+             /*---------*/
+             System.out.println(str2);
+        }
+   }
+}
+
+63。十六进制转换十进制
+程序填空，不要改变与输入输出有关的语句。
+输入一个正整数repeat (0<repeat<10)，做repeat次下列运算：
+输入一行字符串，对字符串做如下处理：滤去所有的非十六进制字符后，组成一
+
+个新字符串（十六进制形式），然后将其转换为十进制数后输出。
+例：括号内是说明
+输入：
+3     (输入3行字符串)
+10
+Pf4+1
+-+A  
+输出：
+16
+3905
+10
+
+
+import java.util.Scanner;
+public class Test60025{
+    public static void main(String []args)
+    {
+       int ri, repeat, i,number,n;
+       char ch;
+       String str,str2="";   //注意,str2是自己加的，可见自己可以加变量
+       Scanner in=new Scanner(System.in);
+       repeat=Integer.parseInt(in.nextLine()); //不能直接数整数?为什么?
+       //答:直接输有一个小问题,因为数值输入和字符串输入不能写在一起，上课演示给大家看
+       for(ri=1; ri<=repeat; ri++){
+             str=in.nextLine();                     
+             str2="";
+             for(i=0;i<str.length();i++)
+             {
+               ch=str.charAt(i);
+               if(ch>='0' & ch <='9' | ch >='A' & ch<='F'|ch>='a'& ch<='f')
+            		 str2+=ch;
+              }
+              number=0;  //每一次开始,number必须设置为0,为什么?
+              //答:在此,number作为一个累加和的变量
+              for(i=0;i<str2.length();i++)
+              {
+            	 ch=str2.charAt(i);
+	             n=0;  //这个赋值是说不通的，有人认为这是java的编译器有点问题
+	        	 if(ch>='0' & ch <='9')
+	        		 n=ch-'0';   //我们说过两个字符加减是一个数字数据 
+	             else if(ch >='A' & ch<='F')
+	            	 n=ch-'A'+10; 
+	        	 else if( ch>='a'& ch<='f')
+	        		 n=ch-'a'+10;
+	        	 for(int j=1;j<str2.length()-i;j++)  //还有第2种写法（请同学来说）
+	        		 n*=16;
+	        	 number=number+n;
+             } 
+             /*---------*/
+             System.out.println(number);
+        }
+   }
+}
+
+
+
+-------------------------------------------------------------------------------------
+
+ 
